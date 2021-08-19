@@ -15,7 +15,7 @@ const SearchBox = () => {
 						type='text'
 						placeholder='Type your Photography service...'
 					/>
-					<button className='bg-red-500 hover:bg-red-600 text-white h-full px-8 text-lg font-bold'>
+					<button className='bg-red-500 hover:bg-red-600 text-white h-full px-8 text-lg font-semibold'>
 						Search
 					</button>
 				</div>
