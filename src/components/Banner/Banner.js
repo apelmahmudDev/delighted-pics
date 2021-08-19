@@ -1,3 +1,4 @@
+import { SearchIcon } from '@heroicons/react/outline';
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 
@@ -6,13 +7,16 @@ const Banner = () => {
 		<div className='bg-delight-banner relative bg-cover bg-center bg-no-repeat h-screen w-screen'>
 			<Navbar />
 			<div>
-				<h1 className='text-white text-8xl font-bold'>Explore the world</h1>
-				<p className='text-white text-md'>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ipsum
-					magni quas veritatis, aut sint voluptates harum facere officia
-					reprehenderit pariatur eaque explicabo mollitia minima eius
-					voluptatibus architecto totam unde!
-				</p>
+				<h1 className='text-white text-4xl font-bold'>
+					What Type of Photography service <br /> Are You Looking For?
+				</h1>
+				<div className='flex items-center'>
+					<span>
+						<SearchIcon className='h-6 w-6' aria-hidden='true' />
+					</span>
+					<input type='text' placeholder='Type your Photography service...' />
+					<button>Search</button>
+				</div>
 			</div>
 		</div>
 	);
