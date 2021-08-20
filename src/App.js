@@ -6,6 +6,8 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Navbar from './components/Navbar/Navbar';
 import Signup from './components/Signup/Signup';
 import Login from './components/Signup/Login';
+import Notfound from './components/NotFound/Notfound';
+import Checkout from './components/Checkout/Checkout';
 
 const App = () => {
 	return (
@@ -17,6 +19,7 @@ const App = () => {
 				</Route>
 				<Route path='/home'>
 					<Banner />
+					<Services />
 				</Route>
 				<Route path='/details'>
 					<Navbar />
@@ -29,6 +32,13 @@ const App = () => {
 				<Route path='/signup'>
 					<Navbar />
 					<Signup />
+				</Route>
+				<Route path='/checkout'>
+					<Navbar />
+					<Checkout />
+				</Route>
+				<Route path='*'>
+					<Notfound />
 				</Route>
 			</Switch>
 		</Router>
