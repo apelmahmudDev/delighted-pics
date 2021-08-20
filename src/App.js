@@ -8,6 +8,7 @@ import Signup from './components/Signup/Signup';
 import Login from './components/Signup/Login';
 import Notfound from './components/NotFound/Notfound';
 import Checkout from './components/Checkout/Checkout';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const App = () => {
 	return (
@@ -36,6 +37,9 @@ const App = () => {
 				<Route path='/checkout'>
 					<Navbar />
 					<Checkout />
+				</Route>
+				<Route path='/dashboard'>
+					<Dashboard />
 				</Route>
 				<Route path='*'>
 					<Notfound />

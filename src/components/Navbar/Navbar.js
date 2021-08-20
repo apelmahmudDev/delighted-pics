@@ -12,7 +12,6 @@ const navigation = [
 	{ name: 'Clients', link: 'clients', current: false },
 	{ name: 'Dashboard', link: 'dashboard', current: false },
 ];
-
 const classNames = (...classes) => {
 	return classes.filter(Boolean).join(' ');
 };

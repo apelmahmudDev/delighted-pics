@@ -1,7 +1,7 @@
 import { PhotographIcon, TrashIcon } from '@heroicons/react/outline';
 import React from 'react';
 
-const Checkout = () => {
+const ServiceManager = () => {
 	const services = [
 		{ name: 'Weeding photography', fee: 345, quantity: 2, status: 'pending' },
 		{ name: 'Costume photography', fee: 345, quantity: 2, status: 'pending' },
@@ -34,8 +34,8 @@ const Checkout = () => {
 									</tr>
 								</thead>
 								<tbody className='bg-white divide-y divide-gray-200'>
-									{services.map((person) => (
-										<tr key={person.email}>
+									{services.map((service) => (
+										<tr key={service.email}>
 											<td className='px-6 py-4 whitespace-nowrap'>
 												<div className='flex items-center'>
 													<div className='flex-shrink-0 h-10 w-10'>
@@ -43,7 +43,7 @@ const Checkout = () => {
 													</div>
 													<div className='ml-4'>
 														<div className='text-sm font-medium text-gray-900'>
-															{person.name}
+															{service.name}
 														</div>
 													</div>
 												</div>
@@ -52,17 +52,16 @@ const Checkout = () => {
 												<div className='flex items-center'>
 													<div className='ml-4'>
 														<div className='text-sm font-medium text-gray-900'>
-															{person.fee}
+															{service.fee}
 														</div>
 													</div>
 												</div>
 											</td>
-
 											<td className='px-6 py-4 whitespace-nowrap'>
 												<div className='flex items-center'>
 													<div className='ml-4'>
 														<div className='text-sm font-medium text-gray-900'>
-															{person.quantity}
+															{service.quantity}
 														</div>
 													</div>
 												</div>
@@ -70,7 +69,13 @@ const Checkout = () => {
 											<td className='px-6 py-4 whitespace-nowrap'>
 												<div className='flex items-center'>
 													<div className='text-sm font-medium text-gray-900'>
-														{person.status}
+														<select>
+															<option selected value='pending'>
+																Pending
+															</option>
+															<option value='send'>Send</option>
+															<option value='done'>Done</option>
+														</select>
 													</div>
 												</div>
 											</td>
@@ -95,4 +100,4 @@ const Checkout = () => {
 	);
 };
 
-export default Checkout;
+export default ServiceManager;
