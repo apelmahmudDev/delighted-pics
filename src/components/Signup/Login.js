@@ -1,30 +1,23 @@
 import React, { useRef, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import googleIcon from '../../images/logo/google.svg';
 
-const Signup = () => {
-	const history = useHistory();
+const Login = () => {
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
 
-	const { signup, signWithGoogle } = useAuth();
-	const nameRef = useRef();
+	const { login, signWithGoogle } = useAuth();
 	const emailRef = useRef();
 	const passwordRef = useRef();
-	const confirmPasswordRef = useRef();
 
 	// sign with email and password
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-			return setError('Password do not match!');
-		}
 		try {
 			setError('');
 			setLoading(true);
-			await signup(emailRef.current.value, passwordRef.current.value);
-			history.push('/login');
+			await login(emailRef.current.value, passwordRef.current.value);
 		} catch (err) {
 			setError(err.message);
 		}
@@ -47,19 +40,12 @@ const Signup = () => {
 		<div className='flex justify-center my-14'>
 			<div className='border-2 border-gray-200 rounded-md shadow mx-2 w-full max-w-md p-4'>
 				<h2 className='text-2xl text-primary font-semibold text-center py-4'>
-					Create an account
+					Login
 				</h2>
 				<div className='text-red-500 font-semibold text-md text-center pb-2'>
 					{error}
 				</div>
 				<form onSubmit={handleSubmit}>
-					<input
-						type='text'
-						ref={nameRef}
-						placeholder='Enter your name'
-						className='text-md form-control'
-						required
-					/>
 					<input
 						type='email'
 						ref={emailRef}
@@ -75,16 +61,9 @@ const Signup = () => {
 						required
 					/>
 					<input
-						type='password'
-						ref={confirmPasswordRef}
-						placeholder='Confirm password'
-						className='text-md form-control'
-						required
-					/>
-					<input
 						type='submit'
 						disabled={loading}
-						value='Signup'
+						value='Login'
 						className='sign-btn'
 					/>
 				</form>
@@ -105,10 +84,10 @@ const Signup = () => {
 				</div>
 
 				<div className='flex justify-evenly'>
-					<span>Already have an account?</span>
-					<Link to='/login'>
+					<span>Need and account?</span>
+					<Link to='/signup'>
 						<span className='text-purple-500 hover:text-purple-700 hover:underline'>
-							Login
+							Sign Up
 						</span>
 					</Link>
 				</div>
@@ -117,4 +96,4 @@ const Signup = () => {
 	);
 };
 
-export default Signup;
+export default Login;

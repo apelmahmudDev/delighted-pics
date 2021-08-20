@@ -5,6 +5,7 @@ import Services from './components/Services/Services';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Navbar from './components/Navbar/Navbar';
 import Signup from './components/Signup/Signup';
+import Login from './components/Signup/Login';
 
 const App = () => {
 	return (
@@ -21,7 +22,12 @@ const App = () => {
 					<Navbar />
 					<ServiceDetails />
 				</Route>
+				<Route path='/login'>
+					<Navbar />
+					<Login />
+				</Route>
 				<Route path='/signup'>
+					<Navbar />
 					<Signup />
 				</Route>
 			</Switch>
