@@ -70,9 +70,7 @@ const ServiceManager = () => {
 												<div className='flex items-center'>
 													<div className='text-sm font-medium text-gray-900'>
 														<select>
-															<option selected value='pending'>
-																Pending
-															</option>
+															<option defaultValue='pending'>Pending</option>
 															<option value='send'>Send</option>
 															<option value='done'>Done</option>
 														</select>

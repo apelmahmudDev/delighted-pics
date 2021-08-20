@@ -20,10 +20,10 @@ const Dashboard = () => {
 					<Route path='/dashboard/manage'>
 						<ServiceManage />
 					</Route>
-					<Route path='/add-service'>
+					<Route path='/dashboard/add-service'>
 						<AddService />
 					</Route>
-					<Route path='/add-admin'>
+					<Route path='/dashboard/add-admin'>
 						<AddAdmin />
 					</Route>
 				</Switch>
