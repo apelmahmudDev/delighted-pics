@@ -14,6 +14,9 @@ const DashboardMenu = () => {
 					<span>{item.name}</span>
 				</Link>
 			))}
+			<Link to='/'>
+				<span>Back</span>
+			</Link>
 		</div>
 	);
 };

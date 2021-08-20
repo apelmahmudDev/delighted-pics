@@ -9,6 +9,7 @@ import Login from './components/Signup/Login';
 import Notfound from './components/NotFound/Notfound';
 import Checkout from './components/Checkout/Checkout';
 import Dashboard from './components/Dashboard/Dashboard';
+import OrderInfo from './components/OrderInfo/OrderInfo';
 
 const App = () => {
 	return (
