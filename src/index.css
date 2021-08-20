@@ -9,3 +9,9 @@
 .cart-btn {
 	@apply shadow uppercase w-28 border border-gray-300 rounded p-1 hover:bg-red-600 hover:text-white transition duration-300 ease-in-out font-semibold text-primary;
 }
+.sign-btn {
+	@apply w-full my-2 p-2 rounded-md bg-purple-500 hover:bg-purple-600 text-white uppercase font-semibold;
+}
+.form-control {
+	@apply w-full my-2 bg-gray-50 p-2 text-gray-900 focus:outline-none focus:ring focus:border-blue-200 rounded-md;
+}

@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
 import ShoppingBagIcon from '@heroicons/react/outline/ShoppingBagIcon';
+import { useAuth } from '../../contexts/AuthContext';
 
 const navigation = [
 	{ name: 'Home', link: 'home', current: true },
@@ -17,6 +18,8 @@ const classNames = (...classes) => {
 };
 
 const Navbar = () => {
+	const { currentUser } = useAuth();
+
 	return (
 		<Disclosure as='nav' className='py-4'>
 			{({ open }) => (
@@ -81,22 +84,28 @@ const Navbar = () => {
 								{/* Profile dropdown */}
 								<Menu as='div' className='ml-3 relative'>
 									<div>
-										<Link to='/signup'>
-											<span className='text-gray-300 hover:text-white font-medium text-sm'>
-												Sign Up
-											</span>
-										</Link>
-										{/* <Menu.Button className='bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
-											<span className='sr-only'>Open user menu</span> */}
-										{/* user image */}
-										{/* <img
-												className='h-8 w-8 rounded-full'
-												src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-												alt=''
-											/> */}
-										{/* </Menu.Button> */}
+										{/* login button */}
+										{!currentUser && (
+											<Link to='/signup'>
+												<button className='text-gray-300 hover:text-white font-medium text-sm'>
+													Sign Up
+												</button>
+											</Link>
+										)}
+										{/* signed in user show*/}
+										{currentUser && (
+											<Menu.Button className='bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
+												<span className='sr-only'>Open user menu</span>
+												{/* user image */}
+												<img
+													className='h-8 w-8 rounded-full'
+													src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+													alt=''
+												/>
+											</Menu.Button>
+										)}
 									</div>
-									{/* <Transition
+									<Transition
 										as={Fragment}
 										enter='transition ease-out duration-100'
 										enterFrom='transform opacity-0 scale-95'
@@ -120,7 +129,7 @@ const Navbar = () => {
 												)}
 											</Menu.Item>
 										</Menu.Items>
-									</Transition> */}
+									</Transition>
 								</Menu>
 							</div>
 						</div>
