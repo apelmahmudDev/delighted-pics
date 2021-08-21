@@ -12,7 +12,7 @@ const ServiceDetails = () => {
 			try {
 				setLoading(true);
 				const response = await fetch(
-					`http://localhost:5000/loadService/${serviceId}`
+					`https://fierce-river-40368.herokuapp.com/loadService/${serviceId}`
 				);
 				const data = await response.json();
 				setService(data);

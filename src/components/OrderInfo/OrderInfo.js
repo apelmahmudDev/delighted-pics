@@ -30,7 +30,7 @@ const OrderInfo = () => {
 		// add orders info at mongodb
 		try {
 			setMessage('');
-			const url = 'http://localhost:5000/addOrder';
+			const url = 'https://fierce-river-40368.herokuapp.com/addOrder';
 			const option = {
 				method: 'POST',
 				body: JSON.stringify(orderInfo),
@@ -55,7 +55,7 @@ const OrderInfo = () => {
 			try {
 				setLoading(true);
 				const response = await fetch(
-					`http://localhost:5000/loadService/${buyId}`
+					`https://fierce-river-40368.herokuapp.com/loadService/${buyId}`
 				);
 				const data = await response.json();
 				setService(data);
@@ -83,7 +83,7 @@ const OrderInfo = () => {
 					<div className='my-8'>
 						<label className='text-primary font-semibold'>Name</label>
 						<input
-							defaultValue={currentUser?.displayName || 'David doll'}
+							defaultValue={currentUser?.displayName || ''}
 							{...register('name', { required: true })}
 							placeholder='Enter your name'
 							className='form-control border'
@@ -97,7 +97,7 @@ const OrderInfo = () => {
 					<div className='my-8'>
 						<label className='text-primary font-semibold'>Email</label>
 						<input
-							defaultValue={currentUser?.email || 'example@gmail.com'}
+							defaultValue={currentUser?.email || ''}
 							{...register('email', { required: true })}
 							placeholder='Enter your Email'
 							className='form-control border'

@@ -1,28 +1,30 @@
 import { PhotographIcon, TrashIcon } from '@heroicons/react/outline';
-import React from 'react';
-import OrderInfo from '../OrderInfo/OrderInfo';
+import React, { useEffect, useState } from 'react';
+import { useAuth } from '../../contexts/AuthContext';
 
 const Checkout = () => {
-	const services = [
-		{
-			name: 'Weeding photography',
-			fee: 345,
-			quality: 'Good',
-			status: 'pending',
-		},
-		{
-			name: 'Costume photography',
-			fee: 345,
-			quality: 'Good',
-			status: 'pending',
-		},
-		{
-			name: 'Scenery photography',
-			fee: 345,
-			quality: 'Excellent',
-			status: 'pending',
-		},
-	];
+	const { currentUser } = useAuth();
+	const [orders, setOrders] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	// fetch specific customer orders from database
+	useEffect(() => {
+		const fetchOrders = async () => {
+			try {
+				setLoading(true);
+				const response = await fetch(
+					`https://fierce-river-40368.herokuapp.com/customerOrders?email=${currentUser.email}`
+				);
+				const data = await response.json();
+				setOrders(data);
+			} catch (error) {
+				console.log('err', error);
+			}
+			setLoading(false);
+		};
+		fetchOrders();
+	}, [currentUser.email]);
+
 	const tableHeader = [
 		'Services',
 		'Service fee',
@@ -31,8 +33,9 @@ const Checkout = () => {
 		'Remove',
 	];
 	return (
-		<div>
-			<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-12'>
+		<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-12'>
+			{loading && <div className='text-center text-lg'>Loading...</div>}
+			{!loading && (
 				<div className='flex flex-col'>
 					<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 						<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
@@ -51,8 +54,8 @@ const Checkout = () => {
 										</tr>
 									</thead>
 									<tbody className='bg-white divide-y divide-gray-200'>
-										{services.map((person) => (
-											<tr key={person.email}>
+										{orders.map((order) => (
+											<tr key={order._id}>
 												<td className='px-6 py-4 whitespace-nowrap'>
 													<div className='flex items-center'>
 														<div className='flex-shrink-0 h-10 w-10'>
@@ -60,7 +63,7 @@ const Checkout = () => {
 														</div>
 														<div className='ml-4'>
 															<div className='text-sm font-medium text-gray-900'>
-																{person.name}
+																{order.serviceName}
 															</div>
 														</div>
 													</div>
@@ -69,7 +72,7 @@ const Checkout = () => {
 													<div className='flex items-center'>
 														<div className='ml-4'>
 															<div className='text-sm font-medium text-gray-900'>
-																{person.fee}
+																{order.fee}
 															</div>
 														</div>
 													</div>
@@ -79,7 +82,7 @@ const Checkout = () => {
 													<div className='flex items-center'>
 														<div className='ml-4'>
 															<div className='text-sm font-medium text-gray-900'>
-																{person.quality}
+																{order.quality}
 															</div>
 														</div>
 													</div>
@@ -87,7 +90,7 @@ const Checkout = () => {
 												<td className='px-6 py-4 whitespace-nowrap'>
 													<div className='flex items-center'>
 														<div className='text-sm font-medium text-gray-900'>
-															{person.status}
+															{order.status}
 														</div>
 													</div>
 												</td>
@@ -108,7 +111,7 @@ const Checkout = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 };

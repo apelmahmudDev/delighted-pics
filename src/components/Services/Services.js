@@ -9,7 +9,9 @@ const Services = () => {
 		const fetchServices = async () => {
 			try {
 				setLoading(true);
-				const response = await fetch('http://localhost:5000/loadServices');
+				const response = await fetch(
+					'https://fierce-river-40368.herokuapp.com/loadServices'
+				);
 				const data = await response.json();
 				setServices(data);
 			} catch (error) {

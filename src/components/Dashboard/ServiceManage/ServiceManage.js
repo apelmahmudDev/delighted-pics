@@ -10,7 +10,9 @@ const ServiceManager = () => {
 		const fetchOrders = async () => {
 			try {
 				setLoading(true);
-				const response = await fetch('http://localhost:5000/loadAllOrders');
+				const response = await fetch(
+					'https://fierce-river-40368.herokuapp.com/loadAllOrders'
+				);
 				const data = await response.json();
 				setOrders(data);
 			} catch (error) {
