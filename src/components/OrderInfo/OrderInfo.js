@@ -6,6 +6,7 @@ import { useAuth } from '../../contexts/AuthContext';
 const OrderInfo = () => {
 	const [service, setService] = useState({});
 	const [loading, setLoading] = useState(false);
+	const [message, setMessage] = useState('');
 	const { buyId } = useParams();
 	const { currentUser } = useAuth();
 
@@ -15,7 +16,7 @@ const OrderInfo = () => {
 		formState: { errors },
 	} = useForm();
 
-	const onSubmit = (data) => {
+	const onSubmit = async (data) => {
 		const orderInfo = {
 			...data,
 			serviceName: service.name,
@@ -24,7 +25,25 @@ const OrderInfo = () => {
 			status: 'Progressing',
 			date: new Date(),
 		};
-		console.log(orderInfo);
+		// add orders info at mongodb
+		try {
+			setMessage('');
+			const url = 'http://localhost:5000/order';
+			const option = {
+				method: 'POST',
+				body: JSON.stringify(orderInfo),
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8',
+				},
+			};
+			const response = await fetch(url, option);
+			const data = await response.json();
+			if (data) {
+				setMessage('Your order successfully placed to us!');
+			}
+		} catch (error) {
+			console.log('err', error);
+		}
 	};
 
 	// load one service by service id
@@ -114,7 +133,7 @@ const OrderInfo = () => {
 					</div>
 					<input
 						type='submit'
-						value='Add to cart'
+						value='Order service'
 						className='p-2  bg-purple-400 hover:bg-purple-600 text-white uppercase rounded'
 					/>
 				</form>

@@ -3,24 +3,6 @@ import Service from '../Service/Service';
 const Services = () => {
 	const [services, setServices] = useState([]);
 	const [loading, setLoading] = useState(false);
-	// // add all services to mongodb
-	// const handleService = async () => {
-	// 	try {
-	// 		const url = 'http://localhost:5000/addServices';
-	// 		const option = {
-	// 			method: 'POST',
-	// 			body: JSON.stringify(serviceData),
-	// 			headers: {
-	// 				'Content-type': 'application/json; charset=UTF-8',
-	// 			},
-	// 		};
-	// 		const response = await fetch(url, option);
-	// 		const data = await response.json();
-	// 		console.log(data);
-	// 	} catch (error) {
-	// 		console.log('err', error);
-	// 	}
-	// };
 
 	// fetch all service data from database
 	useEffect(() => {
