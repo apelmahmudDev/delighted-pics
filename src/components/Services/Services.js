@@ -35,7 +35,7 @@ const Services = () => {
 			{/* service */}
 			{loading && <div className='text-xl text-center'>Loading...</div>}
 			{!loading && (
-				<div className='grid grid-cols-3 gap-8'>
+				<div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-8'>
 					{services.map((service) => (
 						<Service key={service._id} service={service}></Service>
 					))}
