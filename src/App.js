@@ -37,13 +37,13 @@ const App = () => {
 						<Navbar />
 						<Signup />
 					</Route>
-					<Route path='/checkout'>
+					<PrivateRoute path='/checkout'>
 						<Navbar />
 						<Checkout />
-					</Route>
-					<Route path='/dashboard'>
+					</PrivateRoute>
+					<PrivateRoute path='/dashboard'>
 						<Dashboard />
-					</Route>
+					</PrivateRoute>
 					<PrivateRoute path='/order-info/:buyId'>
 						<OrderInfo />
 					</PrivateRoute>

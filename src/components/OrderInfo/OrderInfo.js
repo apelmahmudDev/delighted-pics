@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 const OrderInfo = () => {
 	const [service, setService] = useState({});
 	const [loading, setLoading] = useState(false);
 	const [message, setMessage] = useState('');
+
 	const { buyId } = useParams();
 	const { currentUser } = useAuth();
+	let history = useHistory();
 
 	const {
 		register,
@@ -28,7 +30,7 @@ const OrderInfo = () => {
 		// add orders info at mongodb
 		try {
 			setMessage('');
-			const url = 'http://localhost:5000/order';
+			const url = 'http://localhost:5000/addOrder';
 			const option = {
 				method: 'POST',
 				body: JSON.stringify(orderInfo),
@@ -40,6 +42,7 @@ const OrderInfo = () => {
 			const data = await response.json();
 			if (data) {
 				setMessage('Your order successfully placed to us!');
+				history.push('/checkout');
 			}
 		} catch (error) {
 			console.log('err', error);

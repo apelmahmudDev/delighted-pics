@@ -36,6 +36,7 @@ const Login = () => {
 			setError('');
 			setLoading(true);
 			await signWithGoogle();
+			history.replace(from);
 		} catch (err) {
 			setError(err.message);
 		}

@@ -4,7 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import googleIcon from '../../images/logo/google.svg';
 
 const Signup = () => {
-	const history = useHistory();
+	let history = useHistory();
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
 
