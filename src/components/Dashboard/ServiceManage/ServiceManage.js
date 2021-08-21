@@ -3,14 +3,29 @@ import React from 'react';
 
 const ServiceManager = () => {
 	const services = [
-		{ name: 'Weeding photography', fee: 345, quantity: 2, status: 'pending' },
-		{ name: 'Costume photography', fee: 345, quantity: 2, status: 'pending' },
-		{ name: 'Scenery photography', fee: 345, quantity: 2, status: 'pending' },
+		{
+			name: 'Weeding photography',
+			fee: 345,
+			quality: 'Good',
+			status: 'pending',
+		},
+		{
+			name: 'Costume photography',
+			fee: 345,
+			quality: 'Good',
+			status: 'pending',
+		},
+		{
+			name: 'Scenery photography',
+			fee: 345,
+			quality: 'Excellent',
+			status: 'pending',
+		},
 	];
 	const tableHeader = [
 		'Services',
 		'Service fee',
-		'Quantity',
+		'Quality',
 		'Status',
 		'Remove',
 	];
@@ -61,7 +76,7 @@ const ServiceManager = () => {
 												<div className='flex items-center'>
 													<div className='ml-4'>
 														<div className='text-sm font-medium text-gray-900'>
-															{service.quantity}
+															{service.quality}
 														</div>
 													</div>
 												</div>
@@ -70,8 +85,9 @@ const ServiceManager = () => {
 												<div className='flex items-center'>
 													<div className='text-sm font-medium text-gray-900'>
 														<select>
-															<option defaultValue='pending'>Pending</option>
-															<option value='send'>Send</option>
+															<option defaultValue='progressing'>
+																Progressing
+															</option>
 															<option value='done'>Done</option>
 														</select>
 													</div>

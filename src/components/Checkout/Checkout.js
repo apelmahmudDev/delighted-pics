@@ -4,14 +4,29 @@ import OrderInfo from '../OrderInfo/OrderInfo';
 
 const Checkout = () => {
 	const services = [
-		{ name: 'Weeding photography', fee: 345, quantity: 2, status: 'pending' },
-		{ name: 'Costume photography', fee: 345, quantity: 2, status: 'pending' },
-		{ name: 'Scenery photography', fee: 345, quantity: 2, status: 'pending' },
+		{
+			name: 'Weeding photography',
+			fee: 345,
+			quality: 'Good',
+			status: 'pending',
+		},
+		{
+			name: 'Costume photography',
+			fee: 345,
+			quality: 'Good',
+			status: 'pending',
+		},
+		{
+			name: 'Scenery photography',
+			fee: 345,
+			quality: 'Excellent',
+			status: 'pending',
+		},
 	];
 	const tableHeader = [
 		'Services',
 		'Service fee',
-		'Quantity',
+		'quality',
 		'Status',
 		'Remove',
 	];
@@ -65,7 +80,7 @@ const Checkout = () => {
 													<div className='flex items-center'>
 														<div className='ml-4'>
 															<div className='text-sm font-medium text-gray-900'>
-																{person.quantity}
+																{person.quality}
 															</div>
 														</div>
 													</div>

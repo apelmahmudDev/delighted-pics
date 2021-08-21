@@ -7,19 +7,19 @@ const AddService = () => {
 				<div className='mt-4 flex justify-around'>
 					<div>
 						<div className='mb-4'>
-							<label className='font-semibold'>Product Name</label>
+							<label className='font-semibold'>Service Name</label>
 							<input
 								type='text'
 								className='form-control'
-								placeholder='Enter name'
+								placeholder='Enter service name'
 							/>
 						</div>
 						<div className='mb-4'>
-							<label className='font-semibold'>Add Price</label>
+							<label className='font-semibold'>Add Fee</label>
 							<input
 								type='text'
 								className='form-control'
-								placeholder='Enter Price'
+								placeholder='Enter service fee'
 							/>
 						</div>
 						<div className='mb-4'>
@@ -34,11 +34,11 @@ const AddService = () => {
 					</div>
 					<div>
 						<div className='mb-4'>
-							<label className='font-semibold'>Quantity</label>
+							<label className='font-semibold'>Quality</label>
 							<input
-								type='number'
+								type='text'
 								className='form-control'
-								placeholder='Enter quantity'
+								placeholder='Enter service quality'
 							/>
 						</div>
 						<div className='mb-4'>

@@ -1,0 +1,66 @@
+[
+	{
+		"id": "B016F3M7OM",
+		"name": "Weeding photography",
+		"fee": 234,
+		"quality": "Good",
+		"img": "https://i.imgur.com/hTFYduT.jpg",
+		"description": "Wedding photography is a specialty in photography that is primarily focused on the photography of events and activities relating to weddings. It may include other types of portrait photography of the couple before the official wedding day, such as a preo fficial wedding day, such as a pre"
+	},
+	{
+		"id": "B056F3M1ON",
+		"name": "3D photography",
+		"fee": 434,
+		"quality": "Excellent",
+		"img": "https://i.imgur.com/ekEdh0c.jpg",
+		"description": "3D photography is a specialty in photography that is primarily focused on the photography of events and activities relating to 3D. It may include other types of portrait photography of the couple before the official 3D day, such as a preo fficial 3D day, such as a pre"
+	},
+	{
+		"id": "B056F4Q10N",
+		"name": "Food photography",
+		"fee": 299,
+		"quality": "Good",
+		"img": "https://i.imgur.com/uEEpJQS.jpg",
+		"description": "Food photography is a specialty in photography that is primarily focused on the photography of events and activities relating to Food. It may include other types of portrait photography of the couple before the official Food day, such as a preo fficial Food day, such as a pre"
+	},
+	{
+		"id": "A856F4Q10N",
+		"name": "Interior photography",
+		"fee": 499,
+		"quality": "Good",
+		"img": "https://i.imgur.com/7d7pK2d.jpg",
+		"description": "Interior photography is a specialty in photography that is primarily focused on the photography of events and activities relating to Interior. It may include other types of portrait photography of the couple before the official Interior day, such as a preo fficial Interior day, such as a pre"
+	},
+	{
+		"id": "A8ZZF4Q10N",
+		"name": "Lifestyle photography",
+		"fee": 199,
+		"quality": "Excellent",
+		"img": "https://i.imgur.com/fIlH1KZ.jpg",
+		"description": "Lifestyle photography is a specialty in photography that is primarily focused on the photography of events and activities relating to Lifestyle. It may include other types of portrait photography of the couple before the official Lifestyle day, such as a preo fficial Lifestyle day, such as a pre"
+	},
+	{
+		"id": "A8Z4q7Q10N",
+		"name": "Product photography",
+		"fee": 569,
+		"quality": "Excellent",
+		"img": "https://i.imgur.com/wPIdgkT.jpg",
+		"description": "Product photography is a specialty in photography that is primarily focused on the photography of events and activities relating to Product. It may include other types of portrait photography of the couple before the official Product day, such as a preo official Product day, such as a pre"
+	},
+	{
+		"id": "A8Z4q98M10N",
+		"name": "Video Capture",
+		"fee": 569,
+		"quality": "Excellent",
+		"img": "https://i.imgur.com/DtFshc7.jpg",
+		"description": "Video Capture is a specialty in Video Capture that is primarily focused on the photography of events and activities relating to Product. It may include other types of portrait photography of the couple before the official Video Capture day, such as a preo official Video Capture day, such as a pre"
+	},
+	{
+		"id": "B2Z4q98M10N",
+		"name": "Flowers Photography",
+		"fee": 229,
+		"quality": "Good",
+		"img": "https://i.imgur.com/dsdQ0XN.jpg",
+		"description": "Flowers Photography is a specialty in Video Capture that is primarily focused on the photography of events and activities relating to Product. It may include other types of portrait photography of the couple before the official Video Capture day, such as a preo official Video Capture day, such as a pre"
+	}
+]
