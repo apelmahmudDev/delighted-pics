@@ -13,40 +13,45 @@ import OrderInfo from './components/OrderInfo/OrderInfo';
 
 const App = () => {
 	return (
-		<Router>
-			<Switch>
-				<Route exact path='/'>
-					<Banner />
-					<Services />
-				</Route>
-				<Route path='/home'>
-					<Banner />
-					<Services />
-				</Route>
-				<Route path='/details'>
-					<Navbar />
-					<ServiceDetails />
-				</Route>
-				<Route path='/login'>
-					<Navbar />
-					<Login />
-				</Route>
-				<Route path='/signup'>
-					<Navbar />
-					<Signup />
-				</Route>
-				<Route path='/checkout'>
-					<Navbar />
-					<Checkout />
-				</Route>
-				<Route path='/dashboard'>
-					<Dashboard />
-				</Route>
-				<Route path='*'>
-					<Notfound />
-				</Route>
-			</Switch>
-		</Router>
+		<div>
+			<Router>
+				<Switch>
+					<Route exact path='/'>
+						<Banner />
+						<Services />
+					</Route>
+					<Route path='/home'>
+						<Banner />
+						<Services />
+					</Route>
+					<Route path='/details/:serviceId'>
+						<Navbar />
+						<ServiceDetails />
+					</Route>
+					<Route path='/login'>
+						<Navbar />
+						<Login />
+					</Route>
+					<Route path='/signup'>
+						<Navbar />
+						<Signup />
+					</Route>
+					<Route path='/checkout'>
+						<Navbar />
+						<Checkout />
+					</Route>
+					<Route path='/dashboard'>
+						<Dashboard />
+					</Route>
+					<Route path='/order-info/:buyId'>
+						<OrderInfo />
+					</Route>
+					<Route path='*'>
+						<Notfound />
+					</Route>
+				</Switch>
+			</Router>
+		</div>
 	);
 };
 

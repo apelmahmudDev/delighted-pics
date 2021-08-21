@@ -1,29 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Service = () => {
+const Service = (props) => {
+	const { name, fee, description, img, _id } = props.service;
+	const subDescription = description.substr(0, 160);
+
 	return (
-		<div className='bg-gray-100 rounded-md p-3 shadow-md'>
-			<div className='overflow-hidden'>
+		<div className='bg-gray-50 rounded-md p-3 shadow '>
+			<div className='overflow-hidden h-52'>
 				<img
-					className='transform hover:scale-125 duration-500'
-					src='https://www.daily-sun.com/assets/archive/images/print-edition/magazine/2018/April/06-04-2017/Daily-sun-2018-04-06-08-30.jpg'
-					alt='weeding photography'
+					className='object-cover h-full w-full rounded transform hover:scale-125 duration-500'
+					src={img}
+					alt={name}
 				/>
 			</div>
-			<h2 className='text-2xl text-primary font-medium my-2'>
-				Weeding Photography
-			</h2>
-			<p className='text-gray-700'>
-				Wedding photography is a specialty in photography that is primarily
-				focused on the photography of events and activities relating to
-				weddings.
-			</p>
+			<h2 className='text-2xl text-primary font-medium my-2'>{name}</h2>
+			<p className='text-gray-700'>{subDescription}</p>
+
+			<h3 className='text-xl font-semibold text-primary my-2'>
+				<span className='mr-2'>Service fee:</span>
+				<span>${fee}</span>
+			</h3>
+
 			<div className='flex items-center justify-between mt-4'>
-				<Link to='/details'>
+				<Link to={`/details/${_id}`}>
 					<button className='cart-btn'>See details</button>
 				</Link>
-				<Link>
+				<Link to={`/order-info/${_id}`}>
 					<button className='cart-btn'>Buy now</button>
 				</Link>
 			</div>
