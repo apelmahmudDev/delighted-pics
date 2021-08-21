@@ -10,6 +10,7 @@ import Notfound from './components/NotFound/Notfound';
 import Checkout from './components/Checkout/Checkout';
 import Dashboard from './components/Dashboard/Dashboard';
 import OrderInfo from './components/OrderInfo/OrderInfo';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 const App = () => {
 	return (
@@ -43,9 +44,9 @@ const App = () => {
 					<Route path='/dashboard'>
 						<Dashboard />
 					</Route>
-					<Route path='/order-info/:buyId'>
+					<PrivateRoute path='/order-info/:buyId'>
 						<OrderInfo />
-					</Route>
+					</PrivateRoute>
 					<Route path='*'>
 						<Notfound />
 					</Route>

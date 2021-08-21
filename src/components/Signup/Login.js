@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import googleIcon from '../../images/logo/google.svg';
 
@@ -11,6 +11,11 @@ const Login = () => {
 	const emailRef = useRef();
 	const passwordRef = useRef();
 
+	// react router dom path detect and go there
+	let history = useHistory();
+	let location = useLocation();
+	let { from } = location.state || { from: { pathname: '/' } };
+
 	// sign with email and password
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -18,6 +23,7 @@ const Login = () => {
 			setError('');
 			setLoading(true);
 			await login(emailRef.current.value, passwordRef.current.value);
+			history.replace(from);
 		} catch (err) {
 			setError(err.message);
 		}

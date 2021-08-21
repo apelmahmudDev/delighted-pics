@@ -131,11 +131,14 @@ const OrderInfo = () => {
 							</span>
 						)}
 					</div>
-					<input
-						type='submit'
-						value='Order service'
-						className='p-2  bg-purple-400 hover:bg-purple-600 text-white uppercase rounded'
-					/>
+					<div className='flex items-center'>
+						<input
+							type='submit'
+							value='Order now'
+							className='p-2  bg-purple-400 hover:bg-purple-600 text-white uppercase rounded'
+						/>
+						<p className='text-md text-green-500 ml-4'>{message}</p>
+					</div>
 				</form>
 			</div>
 		</div>
