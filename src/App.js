@@ -11,6 +11,7 @@ import Checkout from './components/Checkout/Checkout';
 import Dashboard from './components/Dashboard/Dashboard';
 import OrderInfo from './components/OrderInfo/OrderInfo';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
 	return (
@@ -20,21 +21,21 @@ const App = () => {
 					<Route exact path='/'>
 						<Banner />
 						<Services />
+						<Footer />
 					</Route>
 					<Route path='/home'>
 						<Banner />
 						<Services />
+						<Footer />
 					</Route>
 					<Route path='/details/:serviceId'>
-						<Navbar />
 						<ServiceDetails />
+						<Footer />
 					</Route>
 					<Route path='/login'>
-						<Navbar />
 						<Login />
 					</Route>
 					<Route path='/signup'>
-						<Navbar />
 						<Signup />
 					</Route>
 					<PrivateRoute path='/checkout'>

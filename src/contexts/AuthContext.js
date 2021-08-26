@@ -12,6 +12,7 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState();
 	const [loading, setLoading] = useState(false);
+	const [isNavigate, setIsNavigate] = useState(false);
 
 	// google sign in method
 	const signWithGoogle = () => {
@@ -47,6 +48,8 @@ const AuthProvider = ({ children }) => {
 		signup,
 		login,
 		logout,
+		isNavigate,
+		setIsNavigate,
 	};
 
 	return (

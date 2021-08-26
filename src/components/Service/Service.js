@@ -24,10 +24,10 @@ const Service = (props) => {
 
 			<div className='flex items-center justify-between mt-4'>
 				<Link to={`/details/${_id}`}>
-					<button className='cart-btn'>See details</button>
+					<button className='main-btn'>Service details</button>
 				</Link>
 				<Link to={`/order-info/${_id}`}>
-					<button className='cart-btn'>Buy now</button>
+					<button className='main-btn'>Get our service</button>
 				</Link>
 			</div>
 		</div>

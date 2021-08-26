@@ -5,27 +5,39 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
 import ShoppingBagIcon from '@heroicons/react/outline/ShoppingBagIcon';
 import { useAuth } from '../../contexts/AuthContext';
+import navLogoLight from '../../images/logo/nav-logo-light.svg';
+import navLogoDark from '../../images/logo/nav-logo-dark.svg';
 
 const navigation = [
-	{ name: 'Home', link: 'home', current: true },
-	{ name: 'Example', link: 'example', current: false },
-	{ name: 'Clients', link: 'clients', current: false },
-	{ name: 'Dashboard', link: 'dashboard', current: false },
+	{ name: 'Home', link: 'home' },
+	{ name: 'Example', link: 'example' },
+	{ name: 'Clients', link: 'clients' },
+	{ name: 'Dashboard', link: 'dashboard' },
 ];
 const classNames = (...classes) => {
 	return classes.filter(Boolean).join(' ');
 };
 
 const Navbar = () => {
-	const { currentUser, logout } = useAuth();
+	const { currentUser, logout, isNavigate, setIsNavigate } = useAuth();
+	setIsNavigate(false);
 
 	return (
 		<Disclosure as='nav' className='py-4'>
 			{({ open }) => (
 				<>
 					<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+						{/* delighted pics logo for mobile layout */}
+						<Link to='/'>
+							<div className='md:hidden text-center flex justify-center my-4'>
+								<img
+									src={isNavigate ? navLogoDark : navLogoLight}
+									alt='delighted pics logo'
+								/>
+							</div>
+						</Link>
 						<div className='relative flex items-center justify-between h-16'>
-							<div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+							<div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
 								{/* Mobile menu button*/}
 								<Disclosure.Button className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
 									<span className='sr-only'>Open main menu</span>
@@ -36,29 +48,27 @@ const Navbar = () => {
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
-								{/* delighted logo */}
-								<div className='flex-shrink-0 flex items-center'>
-									<div className=' text-white font-bold text-xl block lg:hidden h-8 w-auto'>
-										Delighted Pics
-									</div>
-									<div className=' text-white font-bold text-xl hidden lg:block h-8 w-auto'>
-										Delighted Pics
-									</div>
-								</div>
-								<div className='hidden sm:block sm:ml-6'>
+							<div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start '>
+								{/* delighted logo for large layout*/}
+								<Link to='/'>
+									<img
+										className='mt-2 hidden md:block'
+										src={isNavigate ? navLogoDark : navLogoLight}
+										alt='delighted pics logo'
+									/>
+								</Link>
+								<div className='hidden md:block sm:ml-6'>
 									<div className='flex space-x-4'>
 										{navigation.map((item) => (
 											<Link
 												key={item.name}
 												to={`/${item.link}`}
 												className={classNames(
-													item.current
-														? 'bg-gray-900 text-white'
-														: 'text-gray-300 hover:bg-gray-700 hover:text-white',
-													'px-3 py-2 rounded-md text-sm font-medium'
+													isNavigate
+														? 'text-gray-900'
+														: 'text-white hover:bg-gray-700 hover:text-white',
+													'block px-3 py-2 rounded-md text-base font-medium'
 												)}
-												aria-current={item.current ? 'page' : undefined}
 											>
 												{item.name}
 											</Link>
@@ -122,10 +132,9 @@ const Navbar = () => {
 												{({ active }) => (
 													<button
 														onClick={logout}
-														className={classNames(
-															active ? 'bg-white' : '',
+														className={
 															'block py-2 text-sm text-gray-700 w-full h-10'
-														)}
+														}
 													>
 														Sign out
 													</button>
@@ -138,19 +147,18 @@ const Navbar = () => {
 						</div>
 					</div>
 					{/* menu for mobile device */}
-					<Disclosure.Panel className='sm:hidden'>
+					<Disclosure.Panel className='md:hidden'>
 						<div className='px-2 pt-2 pb-3 space-y-1'>
 							{navigation.map((item) => (
 								<Link
 									key={item.name}
 									to={`/${item.link}`}
 									className={classNames(
-										item.current
-											? 'bg-gray-900 text-white'
+										isNavigate
+											? 'text-gray-900 hover:bg-gray-700 hover:text-white'
 											: 'text-gray-300 hover:bg-gray-700 hover:text-white',
 										'block px-3 py-2 rounded-md text-base font-medium'
 									)}
-									aria-current={item.current ? 'page' : undefined}
 								>
 									{item.name}
 								</Link>

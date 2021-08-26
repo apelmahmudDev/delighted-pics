@@ -7,8 +7,8 @@ import ServiceManage from './ServiceManage/ServiceManage';
 
 const Dashboard = () => {
 	return (
-		<div className='h-screen grid grid-cols-6'>
-			<div className='text-white bg-red-500'>
+		<div className='h-screen md:grid md:grid-cols-6'>
+			<div className='text-white bg-red-500 pt-2 pb-4'>
 				<Link to='/' className=' text-white inline-block'>
 					<h4 className='uppercase my-4 text-center'>Delighted Pics</h4>
 					<DashboardMenu />

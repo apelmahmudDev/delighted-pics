@@ -11,7 +11,7 @@ const AddAdmin = () => {
 						className='form-control'
 						placeholder='Enter admin name'
 					/>
-					<input type='submit' value='Save' className='cart-btn my-4' />
+					<input type='submit' value='Save' className='main-btn my-4' />
 				</form>
 			</div>
 		</div>

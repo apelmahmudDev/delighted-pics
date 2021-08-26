@@ -103,7 +103,7 @@ const AddService = () => {
 						<div className='text-md text-green-500 mb-4'>{message}</div>
 						<input
 							type='submit'
-							className='px-4 py-2 rounded text-primary border cart-btn'
+							className='px-4 py-2 rounded text-primary border main-btn'
 							value='Save'
 						/>
 					</div>

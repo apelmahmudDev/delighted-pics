@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 
 const Checkout = () => {
-	const { currentUser } = useAuth();
+	const { currentUser, setIsNavigate } = useAuth();
 	const [orders, setOrders] = useState([]);
 	const [loading, setLoading] = useState(false);
+	setIsNavigate(true);
 
 	// fetch specific customer orders from database
 	useEffect(() => {
