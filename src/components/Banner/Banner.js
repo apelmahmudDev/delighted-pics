@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import SearchBox from '../SearchBox/SearchBox';
-import camera from '../../images/camera.png';
+import camera from '../../images/camera-smaller.png';
 
 const Banner = () => {
 	return (
@@ -12,8 +12,8 @@ const Banner = () => {
 				<div>
 					<SearchBox />
 				</div>
-				<div>
-					<img src={camera} alt='banner right camera' className='w-100' />
+				<div className='rounded-xl border border-gray-500 p-5 shadow-2xl self-center'>
+					<img src={camera} alt='banner right camera' className='w-full' />
 				</div>
 			</div>
 		</div>

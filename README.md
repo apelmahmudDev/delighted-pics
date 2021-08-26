@@ -1,21 +1,25 @@
 # Delighted Pics
 
-# [Client live site](https://delighted-pics.web.app/)
+![](https://i.imgur.com/QPwT1kR.png)
 
-A full stack application with a dashboard. Where people find Photography services.
+## [Client live site](https://delighted-pics.web.app/)
+
+A full stack web application with a dashboard. Where people find many kinds of Photography services.
 
 ### Features
 
-- various Phtography services
-- User can order any service
+- Many kinds of Photography services
+- client can hire photographers to get their service
 - Login system with google and email, password
 - service cart feature
+- Admin can add new photography service
 - Admin dashboard
 
 ### Frontend technology:
 
 - React
 - React router
+- firebase
 - Tailwind CSS
 
 ### Backend technology:
@@ -24,4 +28,4 @@ A full stack application with a dashboard. Where people find Photography service
 - Express.js
 - MongoDB
 
-# [Backend code](https://github.com/apelmahmudDev/delighted-pics-server)
+## [Backend code](https://github.com/apelmahmudDev/delighted-pics-server)

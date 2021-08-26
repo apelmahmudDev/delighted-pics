@@ -5,7 +5,8 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: (theme) => ({
-				'delight-banner': 'url(/src/images/banner.png)',
+				'delight-banner':
+					'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 38, 61, 0.5)), url(/src/images/banner.jpg)',
 			}),
 		},
 		backgroundColor: (theme) => ({
@@ -19,3 +20,5 @@ module.exports = {
 	},
 	plugins: [],
 };
+
+// 'delight-banner': 'url(/src/images/banner.png)',
