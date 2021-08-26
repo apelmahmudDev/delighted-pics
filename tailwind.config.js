@@ -11,7 +11,7 @@ module.exports = {
 		backgroundColor: (theme) => ({
 			...theme('colors'),
 			primary: '#00263D',
-			secondary: '#ffed4a',
+			secondary: '#003D63',
 		}),
 	},
 	variants: {
@@ -19,4 +19,3 @@ module.exports = {
 	},
 	plugins: [],
 };
-// 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 38, 61, 0.5)), url(/src/images/banner.png)',

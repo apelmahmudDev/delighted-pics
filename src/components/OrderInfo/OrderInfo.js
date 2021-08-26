@@ -138,7 +138,7 @@ const OrderInfo = () => {
 						<input
 							type='submit'
 							value='Order now'
-							className='p-2  bg-purple-400 hover:bg-purple-600 text-white uppercase rounded'
+							className='p-2  bg-primary hover:bg-secondary text-white uppercase rounded'
 						/>
 						<p className='text-md text-green-500 ml-4'>{message}</p>
 					</div>

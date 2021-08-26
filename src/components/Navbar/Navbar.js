@@ -68,8 +68,8 @@ const Navbar = () => {
 												to={`/${item.link}`}
 												className={classNames(
 													isNavigate
-														? 'text-gray-900'
-														: 'text-white hover:bg-gray-700 hover:text-white',
+														? 'text-primary'
+														: 'text-white hover:bg-secondary hover:text-white',
 													'block px-3 py-2 rounded-md text-base font-medium'
 												)}
 											>
@@ -84,7 +84,7 @@ const Navbar = () => {
 								<Link to='/checkout'>
 									<button
 										type='button'
-										className='bg-gray-800 p-1 mr-2 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
+										className='bg-primary p-1 mr-2 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
 									>
 										<span className='sr-only'>View notifications</span>
 										<ShoppingBagIcon className='h-6 w-6' aria-hidden='true' />
@@ -103,7 +103,7 @@ const Navbar = () => {
 										)}
 										{/* signed in user show*/}
 										{currentUser && (
-											<Menu.Button className='bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
+											<Menu.Button className='bg-secondary flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
 												<span className='sr-only'>Open user menu</span>
 												{/* user image */}
 												{currentUser.photoURL && (
@@ -136,7 +136,7 @@ const Navbar = () => {
 													<button
 														onClick={logout}
 														className={
-															'block py-2 text-sm text-gray-700 w-full h-10'
+															'block py-2 text-sm text-primary w-full h-10'
 														}
 													>
 														Sign out
@@ -158,8 +158,8 @@ const Navbar = () => {
 									to={`/${item.link}`}
 									className={classNames(
 										isNavigate
-											? 'text-gray-900 hover:bg-gray-700 hover:text-white'
-											: 'text-gray-300 hover:bg-gray-700 hover:text-white',
+											? 'text-primary hover:bg-secondary hover:text-white'
+											: 'text-gray-50 hover:bg-secondary hover:text-white',
 										'block px-3 py-2 rounded-md text-base font-medium'
 									)}
 								>
