@@ -1,20 +1,51 @@
+import {
+	faFacebook,
+	faInstagram,
+	faTwitter,
+	faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<div>
-			<div>
-				<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-					<path
-						fill='#00263D'
-						fillOpacity='1'
-						d='M0,64L80,101.3C160,139,320,213,480,213.3C640,213,800,139,960,122.7C1120,107,1280,149,1360,170.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'
-					></path>
-				</svg>
+		<div className='bg-primary h-auto p-5'>
+			<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex sm:justify-around sm:flex-row flex-col gap-11 items-center sm:gap-4'>
+				<div>
+					<h2 className='text-2xl text-white mb-4'>Our social activities</h2>
+					<div className='flex gap-6'>
+						<Link to='/'>
+							<FontAwesomeIcon icon={faFacebook} size='2x' color='white' />
+						</Link>
+						<Link to='/'>
+							<FontAwesomeIcon icon={faTwitter} size='2x' color='white' />
+						</Link>
+						<Link to='/'>
+							<FontAwesomeIcon icon={faInstagram} size='2x' color='white' />
+						</Link>
+						<Link to='/'>
+							<FontAwesomeIcon icon={faYoutube} size='2x' color='white' />
+						</Link>
+					</div>
+				</div>
+				<div>
+					<h2 className='text-white text-2xl mb-4'>Get our updates</h2>
+
+					<label className='text-sm block text-white mb-2'>Your Email:</label>
+					<input
+						className='block p-1 rounded'
+						type='email'
+						placeholder='Enter your email...'
+					/>
+					<button className='main-btn mt-4'>Submit</button>
+				</div>
 			</div>
-			<div className='h-8 p-1 bg-gray-300 text-center text-primary'>
-				&copy; All right reserved Delighted Pics - {new Date().getFullYear()}
-			</div>
+			<p className='text-white text-sm font-semibold text-center mt-8 pt-3 border-t border-gray-500'>
+				<span>
+					&copy; All right reserved Delighted Pics - {new Date().getFullYear()}
+				</span>
+			</p>
 		</div>
 	);
 };
