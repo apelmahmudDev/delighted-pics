@@ -8,6 +8,11 @@ module.exports = {
 				'delight-banner': 'url(/src/images/banner.png)',
 			}),
 		},
+		backgroundColor: (theme) => ({
+			...theme('colors'),
+			primary: '#00263D',
+			secondary: '#ffed4a',
+		}),
 	},
 	variants: {
 		extend: {},

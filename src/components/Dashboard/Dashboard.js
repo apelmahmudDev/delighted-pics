@@ -4,15 +4,18 @@ import AddAdmin from './AddAdmin/AddAdmin';
 import AddService from './AddService/AddService';
 import DashboardMenu from './DashboardMenu/DashboardMenu';
 import ServiceManage from './ServiceManage/ServiceManage';
+import dashboardLogo from '../../images/logo/nav-logo-light.svg';
 
 const Dashboard = () => {
 	return (
 		<div className='h-screen md:grid md:grid-cols-6'>
-			<div className='text-white bg-red-500 pt-2 pb-4'>
-				<Link to='/' className=' text-white inline-block'>
-					<h4 className='uppercase my-4 text-center'>Delighted Pics</h4>
-					<DashboardMenu />
+			<div className='text-white bg-primary pt-2 pb-4'>
+				<Link to='/'>
+					<div className='my-8 ml-4'>
+						<img src={dashboardLogo} alt='logo' />
+					</div>
 				</Link>
+				<DashboardMenu />
 			</div>
 			{/* Route */}
 			<div className='col-span-5 bg-gray-200'>
