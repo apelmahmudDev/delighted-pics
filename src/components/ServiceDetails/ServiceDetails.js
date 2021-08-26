@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 
 const ServiceDetails = () => {
+	const { setIsNavigate } = useAuth();
 	const [service, setService] = useState({});
 	const [loading, setLoading] = useState(false);
 	const { serviceId } = useParams();
+
+	useEffect(() => {
+		setIsNavigate(true);
+	});
 
 	// load one service by service id
 	useEffect(() => {
@@ -25,7 +31,7 @@ const ServiceDetails = () => {
 	}, [serviceId]);
 
 	return (
-		<div className='text-center mt-4 h-auto'>
+		<div className='text-center mt-4 h-screen'>
 			{loading ? (
 				<div className='text-2xl'>Loading...</div>
 			) : (

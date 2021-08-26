@@ -29,6 +29,7 @@ const App = () => {
 						<Footer />
 					</Route>
 					<Route path='/details/:serviceId'>
+						<Navbar />
 						<ServiceDetails />
 						<Footer />
 					</Route>
