@@ -1,5 +1,7 @@
 import { PhotographIcon, TrashIcon } from '@heroicons/react/outline';
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const ServiceManager = () => {
 	const [orders, setOrders] = useState([]);
@@ -35,7 +37,16 @@ const ServiceManager = () => {
 	];
 	return (
 		<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-12'>
-			{loading && <div className='text-center text-lg'>Loading...</div>}
+			{loading && (
+				<div className='text-center'>
+					<FontAwesomeIcon
+						icon={faSpinner}
+						spin
+						size='3x'
+						className='text-primary'
+					/>
+				</div>
+			)}
 			{!loading && (
 				<div className='flex flex-col'>
 					<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>

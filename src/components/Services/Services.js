@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+
 const Services = () => {
 	const [services, setServices] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -34,7 +37,17 @@ const Services = () => {
 			</div>
 
 			{/* service */}
-			{loading && <div className='text-xl text-center'>Loading...</div>}
+
+			{loading && (
+				<div className='text-center'>
+					<FontAwesomeIcon
+						icon={faSpinner}
+						spin
+						size='3x'
+						className='text-primary'
+					/>
+				</div>
+			)}
 			{!loading && (
 				<div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-8'>
 					{services.map((service) => (
