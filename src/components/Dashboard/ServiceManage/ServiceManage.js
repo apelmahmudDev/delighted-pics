@@ -44,8 +44,9 @@ const ServiceManager = () => {
 								<table className='min-w-full divide-y divide-gray-200'>
 									<thead className='bg-gray-50'>
 										<tr>
-											{tableHeader.map((header) => (
+											{tableHeader.map((header, index) => (
 												<th
+													key={index}
 													scope='col'
 													className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
 												>

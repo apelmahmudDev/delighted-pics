@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
@@ -20,7 +20,10 @@ const classNames = (...classes) => {
 
 const Navbar = () => {
 	const { currentUser, logout, isNavigate, setIsNavigate } = useAuth();
-	setIsNavigate(false);
+
+	useEffect(() => {
+		setIsNavigate(false);
+	});
 
 	return (
 		<Disclosure as='nav' className='py-4'>

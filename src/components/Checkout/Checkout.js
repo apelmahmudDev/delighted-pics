@@ -6,7 +6,10 @@ const Checkout = () => {
 	const { currentUser, setIsNavigate } = useAuth();
 	const [orders, setOrders] = useState([]);
 	const [loading, setLoading] = useState(false);
-	setIsNavigate(true);
+
+	useEffect(() => {
+		setIsNavigate(true);
+	});
 
 	// fetch specific customer orders from database
 	useEffect(() => {
