@@ -5,7 +5,7 @@ const SearchBox = () => {
 	return (
 		<div className='flex items-center justify-center h-96 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
 			<div>
-				<h1 className='text-white text-3xl font-bold leading-relaxed mb-8 text-center'>
+				<h1 className='text-white text-2xl sm:text-4xl font-bolder leading-relaxed mb-8 text-center'>
 					What Type of Photography service <br /> Are You Looking For?
 				</h1>
 				<div className='flex items-center bg-white h-12 w-full rounded-lg overflow-hidden'>

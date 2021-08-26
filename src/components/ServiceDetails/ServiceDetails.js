@@ -25,17 +25,17 @@ const ServiceDetails = () => {
 	}, [serviceId]);
 
 	return (
-		<div className='text-center mt-4'>
+		<div className='text-center mt-4 h-auto'>
 			{loading ? (
 				<div className='text-2xl'>Loading...</div>
 			) : (
 				<div>
 					{' '}
 					<h4 className='uppercase text-md text-red-500'>Face Your Service</h4>
-					<h1 className='my-8 text-6xl text-primary font-light'>
+					<h1 className='my-8 text-3xl md:text-6xl text-primary font-light '>
 						{service.name}
 					</h1>
-					<div className='w-8/12 mx-auto text-2xl font-light text-gray-600 leading-relaxed'>
+					<div className='w-8/12 mx-auto text-xl md:text-2xl font-light text-gray-600 leading-relaxed'>
 						<p>{service.description}</p>
 					</div>
 				</div>

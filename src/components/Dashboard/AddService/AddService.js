@@ -48,7 +48,7 @@ const AddService = () => {
 		<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-12'>
 			<div className='bg-white rounded-xl p-4'>
 				<form onSubmit={handleAddService}>
-					<div className='mt-4 flex justify-around'>
+					<div className='mt-4 md:flex justify-around gap-2'>
 						<div>
 							<div className='mb-4'>
 								<label className='font-semibold'>Service Name</label>
