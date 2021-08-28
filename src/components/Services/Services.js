@@ -24,7 +24,7 @@ const Services = () => {
 		};
 		fetchServices();
 	}, []);
-
+	console.log(services);
 	return (
 		<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-16'>
 			<div className='text-center my-16'>
