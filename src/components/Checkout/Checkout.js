@@ -47,7 +47,8 @@ const Checkout = () => {
 				setDeleteMessage('Your cart service deleted successfully');
 				setTimeout(() => {
 					setDeleteMessage('');
-				}, 5000);
+					window.location.reload();
+				}, 3000);
 			}
 		} catch (error) {
 			console.log('err', error);
