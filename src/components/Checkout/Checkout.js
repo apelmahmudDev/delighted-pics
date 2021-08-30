@@ -6,6 +6,7 @@ const Checkout = () => {
 	const { currentUser, setIsNavigate } = useAuth();
 	const [orders, setOrders] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [deleteMessage, setDeleteMessage] = useState('');
 
 	useEffect(() => {
 		setIsNavigate(true);
@@ -29,6 +30,30 @@ const Checkout = () => {
 		fetchOrders();
 	}, [currentUser.email]);
 
+	// delete service from the cart
+	const handleDeleteService = async (serviceId) => {
+		try {
+			setDeleteMessage('');
+			const url = `http://localhost:5000/delete/${serviceId}`;
+			const option = {
+				method: 'DELETE',
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8',
+				},
+			};
+			const response = await fetch(url, option);
+			const data = await response.json();
+			if (data) {
+				setDeleteMessage('Your cart service deleted successfully');
+				setTimeout(() => {
+					setDeleteMessage('');
+				}, 5000);
+			}
+		} catch (error) {
+			console.log('err', error);
+		}
+	};
+
 	const tableHeader = [
 		'Services',
 		'Service fee',
@@ -44,6 +69,10 @@ const Checkout = () => {
 					<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 						<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
 							<div className='shadow overflow-hidden border-b border-gray-200 sm:rounded-lg'>
+								{/* show delete message */}
+								<div className='text-right p-3 text-green-500 text-lg font-semibold'>
+									<h3>{deleteMessage}</h3>
+								</div>
 								<table className='min-w-full divide-y divide-gray-200'>
 									<thead className='bg-gray-50'>
 										<tr>
@@ -114,7 +143,10 @@ const Checkout = () => {
 													<div className='flex items-center'>
 														<div className='ml-4'>
 															<div className='text-sm font-medium text-gray-900'>
-																<TrashIcon className='w-8 cursor-pointer text-red-500 hover:text-red-600' />
+																<TrashIcon
+																	onClick={() => handleDeleteService(order._id)}
+																	className='w-8 cursor-pointer text-red-500 hover:text-red-600'
+																/>
 															</div>
 														</div>
 													</div>
