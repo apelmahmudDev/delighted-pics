@@ -1,7 +1,7 @@
-import { PhotographIcon, TrashIcon } from '@heroicons/react/outline';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import TableData from '../TableData/TableData';
 
 const ServiceManager = () => {
 	const [orders, setOrders] = useState([]);
@@ -66,75 +66,10 @@ const ServiceManager = () => {
 											))}
 										</tr>
 									</thead>
+									{/* table data / orders*/}
 									<tbody className='bg-white divide-y divide-gray-200'>
 										{orders.map((order) => (
-											<tr key={order._id}>
-												<td className='px-3 py-4 whitespace-nowrap'>
-													<div className='flex items-center'>
-														<div className='flex-shrink-0 h-10 w-10'>
-															<PhotographIcon className='h-10 w-10 rounded-full text-primary' />
-														</div>
-														<div className='ml-4'>
-															<div className='text-sm font-medium text-gray-900'>
-																{order.serviceName}
-															</div>
-														</div>
-													</div>
-												</td>
-												<td className='px-3 py-4 whitespace-nowrap'>
-													<div className='flex items-center'>
-														<div className='ml-4'>
-															<div className='text-sm font-medium text-gray-900'>
-																{order.fee}
-															</div>
-														</div>
-													</div>
-												</td>
-												<td className='px-3 py-4 whitespace-nowrap'>
-													<div className='flex items-center'>
-														<div className='text-sm font-medium text-gray-900'>
-															{order.quality}
-														</div>
-													</div>
-												</td>
-												<td className='px-3 py-4 whitespace-nowrap'>
-													<div className='flex items-center'>
-														<div className='text-sm font-medium text-gray-900'>
-															{/* orders name */}
-															{order.name}
-														</div>
-													</div>
-												</td>
-												<td className='px-3 py-4 whitespace-nowrap'>
-													<div className='flex items-center'>
-														<div className='text-sm font-medium text-gray-900'>
-															{/* orders email */}
-															{order.email}
-														</div>
-													</div>
-												</td>
-												<td className='px-3 py-4 whitespace-nowrap'>
-													<div className='flex items-center'>
-														<div className='text-sm font-medium text-gray-900'>
-															<select>
-																<option defaultValue={order.status}>
-																	Progressing
-																</option>
-																<option value='done'>Done</option>
-															</select>
-														</div>
-													</div>
-												</td>
-												<td className='px-3 py-4 whitespace-nowrap'>
-													<div className='flex items-center'>
-														<div className='ml-4'>
-															<div className='text-sm font-medium text-gray-900'>
-																<TrashIcon className='w-8 cursor-pointer text-red-500 hover:text-red-600' />
-															</div>
-														</div>
-													</div>
-												</td>
-											</tr>
+											<TableData key={order._id} order={order} />
 										))}
 									</tbody>
 								</table>
