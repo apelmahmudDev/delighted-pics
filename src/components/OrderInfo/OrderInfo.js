@@ -30,6 +30,7 @@ const OrderInfo = () => {
 		// add orders info at mongodb
 		try {
 			setMessage('');
+			setLoading(true);
 			const url = 'https://fierce-river-40368.herokuapp.com/addOrder';
 			const option = {
 				method: 'POST',
@@ -137,6 +138,7 @@ const OrderInfo = () => {
 					<div className='flex items-center'>
 						<input
 							type='submit'
+							disabled={loading}
 							value='Order now'
 							className='p-2  bg-primary hover:bg-secondary text-white uppercase rounded'
 						/>

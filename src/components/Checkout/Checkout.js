@@ -59,6 +59,17 @@ const Checkout = () => {
 										</tr>
 									</thead>
 									<tbody className='bg-white divide-y divide-gray-200'>
+										{/* show message when cart is empty */}
+										{!orders.length && (
+											<tr>
+												<td
+													colSpan='5'
+													className='text-center text-xl text-red-500 font-semibold p-8'
+												>
+													You have no service
+												</td>
+											</tr>
+										)}
 										{orders.map((order) => (
 											<tr key={order._id}>
 												<td className='px-6 py-4 whitespace-nowrap'>
