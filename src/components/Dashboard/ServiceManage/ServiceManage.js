@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import TableData from '../TableData/TableData';
 
 const ServiceManager = () => {
 	const [orders, setOrders] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [deleteMessage, setDeleteMessage] = useState('');
+	const [isDelete, setIsDelete] = useState(false);
 
 	// fetch all orders data from database
 	useEffect(() => {
@@ -24,6 +26,33 @@ const ServiceManager = () => {
 		};
 		fetchOrders();
 	}, []);
+
+	// service delete from dashboard
+	const serviceDelete = async (serviceId) => {
+		try {
+			setDeleteMessage('');
+			const url = `http://localhost:5000/delete/${serviceId}`;
+			const option = {
+				method: 'DELETE',
+				headers: {
+					'Content-type': 'application/json; charset=UTF-8',
+				},
+			};
+			const response = await fetch(url, option);
+			const data = await response.json();
+			if (data) {
+				setIsDelete(true);
+				setDeleteMessage('Service deleted successfully');
+				setTimeout(() => {
+					setIsDelete(false);
+					setDeleteMessage('');
+					window.location.reload();
+				}, 3000);
+			}
+		} catch (error) {
+			console.log('err', error);
+		}
+	};
 
 	// table header name
 	const tableHeader = [
@@ -52,6 +81,16 @@ const ServiceManager = () => {
 					<div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
 						<div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
 							<div className='shadow overflow-hidden border-b border-gray-200 sm:rounded-lg'>
+								{/* Service deleted massage */}
+								{isDelete && (
+									<div className='text-right'>
+										<h1 className='bg-white text-green-500 px-3 py-1  font-semibold inline-block'>
+											<FontAwesomeIcon className=' mr-3' icon={faCheck} />
+											<span>{deleteMessage}</span>
+										</h1>
+									</div>
+								)}
+
 								<table className='min-w-full divide-y divide-gray-200'>
 									<thead className='bg-gray-50'>
 										<tr>
@@ -69,7 +108,11 @@ const ServiceManager = () => {
 									{/* table data / orders*/}
 									<tbody className='bg-white divide-y divide-gray-200'>
 										{orders.map((order) => (
-											<TableData key={order._id} order={order} />
+											<TableData
+												key={order._id}
+												order={order}
+												serviceDelete={serviceDelete}
+											/>
 										))}
 									</tbody>
 								</table>

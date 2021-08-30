@@ -1,7 +1,7 @@
 import React from 'react';
 import { PhotographIcon, TrashIcon } from '@heroicons/react/outline';
 
-const TableData = ({ order }) => {
+const TableData = ({ order, serviceDelete }) => {
 	// update status done/progress
 	const handleStatusChange = async (e) => {
 		const value = e.target.value;
@@ -28,6 +28,7 @@ const TableData = ({ order }) => {
 					</div>
 					<div className='ml-4'>
 						<div className='text-sm font-medium text-gray-900'>
+							{/* service name */}
 							{order.serviceName}
 						</div>
 					</div>
@@ -36,6 +37,7 @@ const TableData = ({ order }) => {
 			<td className='px-3 py-4 whitespace-nowrap'>
 				<div className='flex items-center'>
 					<div className='ml-4'>
+						{/* service fee */}
 						<div className='text-sm font-medium text-gray-900'>{order.fee}</div>
 					</div>
 				</div>
@@ -43,6 +45,7 @@ const TableData = ({ order }) => {
 			<td className='px-3 py-4 whitespace-nowrap'>
 				<div className='flex items-center'>
 					<div className='text-sm font-medium text-gray-900'>
+						{/* service quality */}
 						{order.quality}
 					</div>
 				</div>
@@ -66,6 +69,7 @@ const TableData = ({ order }) => {
 			<td className='px-3 py-4 whitespace-nowrap'>
 				<div className='flex items-center'>
 					<div className='text-sm font-medium text-gray-900'>
+						{/* order status -> progressing / done */}
 						<select defaultValue={order.status} onChange={handleStatusChange}>
 							<option value='progressing'>Progressing</option>
 							<option value='done'>Done</option>
@@ -76,9 +80,13 @@ const TableData = ({ order }) => {
 			<td className='px-3 py-4 whitespace-nowrap'>
 				<div className='flex items-center'>
 					<div className='ml-4'>
-						<div className='text-sm font-medium text-gray-900'>
+						{/* service delete button*/}
+						<button
+							onClick={() => serviceDelete(order._id)}
+							className='text-sm font-medium text-gray-900'
+						>
 							<TrashIcon className='w-8 cursor-pointer text-red-500 hover:text-red-600' />
-						</div>
+						</button>
 					</div>
 				</div>
 			</td>
