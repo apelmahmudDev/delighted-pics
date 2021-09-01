@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import ShoppingBagIcon from '@heroicons/react/outline/ShoppingBagIcon';
 import { useAuth } from '../../contexts/AuthContext';
 import navLogoLight from '../../images/logo/nav-logo-light.svg';
@@ -12,7 +12,7 @@ const navigation = [
 	{ name: 'Home', link: 'home' },
 	{ name: 'Example', link: 'example' },
 	{ name: 'Clients', link: 'clients' },
-	{ name: 'Dashboard', link: 'dashboard' },
+	// { name: 'Dashboard', link: 'dashboard' },
 ];
 const classNames = (...classes) => {
 	return classes.filter(Boolean).join(' ');
@@ -20,10 +20,16 @@ const classNames = (...classes) => {
 
 const Navbar = () => {
 	const { currentUser, logout, isNavigate, setIsNavigate } = useAuth();
+	let history = useHistory();
 
 	useEffect(() => {
 		setIsNavigate(false);
 	});
+
+	// dashboard navigate
+	const dashboardRoute = () => {
+		history.push('/dashboard/manage');
+	};
 
 	return (
 		<Disclosure as='nav' className='py-4'>
@@ -76,6 +82,19 @@ const Navbar = () => {
 												{item.name}
 											</Link>
 										))}
+										{/* navigate dashboard */}
+										<button
+											onClick={dashboardRoute}
+											className={classNames(
+												isNavigate
+													? 'text-primary'
+													: 'text-white hover:bg-secondary hover:text-white',
+												'block px-3 py-2 rounded-md text-base font-medium'
+											)}
+										>
+											{' '}
+											Dashboard
+										</button>
 									</div>
 								</div>
 							</div>

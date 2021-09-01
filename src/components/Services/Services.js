@@ -30,9 +30,11 @@ const Services = () => {
 				<h1 className='text-primary text-4xl font-semibold text-gray-700 mb-3'>
 					Our Services
 				</h1>
-				Photography is the art, application, and practice of creating durable
-				images by <br /> recording light, either electronically by means of an
-				image!
+				<p className='text-primary text-md'>
+					Photography is the art, application, and practice of creating durable
+					images by <br /> recording light, either electronically by means of an
+					image!
+				</p>
 			</div>
 
 			{/* service */}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import googleIcon from '../../images/logo/google.svg';
@@ -8,11 +8,16 @@ const Signup = () => {
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
 
-	const { signup, signWithGoogle } = useAuth();
+	const { signup, signWithGoogle, setIsNavigate } = useAuth();
 	const nameRef = useRef();
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const confirmPasswordRef = useRef();
+
+	// navigation changer
+	useEffect(() => {
+		setIsNavigate(true);
+	});
 
 	// sign with email and password
 	const handleSubmit = async (e) => {

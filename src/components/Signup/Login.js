@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import googleIcon from '../../images/logo/google.svg';
@@ -7,7 +7,7 @@ const Login = () => {
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
 
-	const { login, signWithGoogle } = useAuth();
+	const { login, signWithGoogle, setIsNavigate } = useAuth();
 	const emailRef = useRef();
 	const passwordRef = useRef();
 
@@ -15,6 +15,11 @@ const Login = () => {
 	let history = useHistory();
 	let location = useLocation();
 	let { from } = location.state || { from: { pathname: '/' } };
+
+	// navigation changer
+	useEffect(() => {
+		setIsNavigate(true);
+	});
 
 	// sign with email and password
 	const handleSubmit = async (e) => {

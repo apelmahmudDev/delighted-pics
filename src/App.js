@@ -34,9 +34,11 @@ const App = () => {
 						<Footer />
 					</Route>
 					<Route path='/login'>
+						<Navbar />
 						<Login />
 					</Route>
 					<Route path='/signup'>
+						<Navbar />
 						<Signup />
 					</Route>
 					<PrivateRoute path='/checkout'>
@@ -47,6 +49,7 @@ const App = () => {
 						<Dashboard />
 					</PrivateRoute>
 					<PrivateRoute path='/order-info/:buyId'>
+						<Navbar />
 						<OrderInfo />
 					</PrivateRoute>
 					<Route path='*'>

@@ -9,8 +9,13 @@ const OrderInfo = () => {
 	const [message, setMessage] = useState('');
 
 	const { buyId } = useParams();
-	const { currentUser } = useAuth();
+	const { currentUser, setIsNavigate } = useAuth();
 	let history = useHistory();
+
+	// navigation changer
+	useEffect(() => {
+		setIsNavigate(true);
+	});
 
 	const {
 		register,
