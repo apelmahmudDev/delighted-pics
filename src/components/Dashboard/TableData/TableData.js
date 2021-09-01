@@ -6,7 +6,7 @@ const TableData = ({ order, serviceDelete }) => {
 	const handleStatusChange = async (e) => {
 		const value = e.target.value;
 		try {
-			const url = `http://localhost:5000/updateStatus/${order._id}`;
+			const url = `https://fierce-river-40368.herokuapp.com/updateStatus/${order._id}`;
 			const option = {
 				method: 'PATCH',
 				body: JSON.stringify({ value }),

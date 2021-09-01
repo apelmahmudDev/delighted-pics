@@ -31,7 +31,7 @@ const ServiceManager = () => {
 	const serviceDelete = async (serviceId) => {
 		try {
 			setDeleteMessage('');
-			const url = `http://localhost:5000/delete/${serviceId}`;
+			const url = `https://fierce-river-40368.herokuapp.com/delete/${serviceId}`;
 			const option = {
 				method: 'DELETE',
 				headers: {
