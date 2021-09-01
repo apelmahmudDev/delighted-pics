@@ -6,7 +6,7 @@ module.exports = {
 		extend: {
 			backgroundImage: (theme) => ({
 				'delight-banner':
-					'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 38, 61, 0.5)), url(/src/images/banner.jpg)',
+					'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 38, 61, 0.5)), url(/src/images/banner.jpg)',
 			}),
 		},
 		backgroundColor: (theme) => ({
