@@ -1,6 +1,6 @@
 # Delighted Pics
 
-![](https://i.imgur.com/QPwT1kR.png)
+![](https://i.imgur.com/flEoqSx.png)
 
 ## [Client live site](https://delighted-pics.web.app/)
 
