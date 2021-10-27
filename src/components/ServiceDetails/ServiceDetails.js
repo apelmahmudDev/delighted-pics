@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 const ServiceDetails = () => {
 	const { setIsNavigate } = useAuth();
@@ -23,7 +24,7 @@ const ServiceDetails = () => {
 				const data = await response.json();
 				setService(data);
 			} catch (error) {
-				console.log('err', error);
+				console.log("err", error);
 			}
 			setLoading(false);
 		};
@@ -31,18 +32,37 @@ const ServiceDetails = () => {
 	}, [serviceId]);
 
 	return (
-		<div className='text-center mt-4 h-screen'>
+		<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-16">
+			{/* <div className="text-center mt-4 h-screen"> */}
 			{loading ? (
-				<div className='text-2xl'>Loading...</div>
+				<div className="text-2xl">Loading...</div>
 			) : (
-				<div>
-					{' '}
-					<h4 className='uppercase text-md text-red-500'>Face Your Service</h4>
-					<h1 className='my-8 text-3xl md:text-6xl text-primary font-light '>
-						{service.name}
-					</h1>
-					<div className='w-8/12 mx-auto text-xl md:text-2xl font-light text-gray-600 leading-relaxed'>
-						<p>{service.description}</p>
+				<div className="grid md:grid-cols-2 gap-5">
+					<div>
+						<img src={service?.img} alt="" />
+					</div>
+					<div>
+						<h2 className="text-2xl sm:text-3xl font-medium text-primary">
+							{service?.name}
+						</h2>
+						<h4 className="uppercase text-red-600 text-lg font-light my-4">
+							Face your service
+						</h4>
+						<p className="text-lg text-gray-700">{service?.description}</p>
+
+						<div className="my-4">
+							<div className="text-primary font-light">
+								Service fee: ${service?.fee}
+							</div>
+
+							<div className="text-primary font-light">
+								Picture quality: {service?.quality}
+							</div>
+						</div>
+
+						<Link to={`/order-info/${service?._id}`}>
+							<button className="main-btn w-full my-1">Get our service</button>
+						</Link>
 					</div>
 				</div>
 			)}
