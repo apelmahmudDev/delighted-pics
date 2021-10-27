@@ -35,7 +35,7 @@ const ServiceDetails = () => {
 		<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-16">
 			{/* <div className="text-center mt-4 h-screen"> */}
 			{loading ? (
-				<div className="text-2xl">Loading...</div>
+				<div className="text-2xl text-center">Loading...</div>
 			) : (
 				<div className="grid md:grid-cols-2 gap-5 bg-gray-50 rounded-md p-5 shadow ">
 					<div>
