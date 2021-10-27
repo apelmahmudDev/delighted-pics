@@ -37,7 +37,7 @@ const ServiceDetails = () => {
 			{loading ? (
 				<div className="text-2xl">Loading...</div>
 			) : (
-				<div className="grid md:grid-cols-2 gap-5">
+				<div className="grid md:grid-cols-2 gap-5 bg-gray-50 rounded-md p-5 shadow ">
 					<div>
 						<img src={service?.img} alt="" />
 					</div>
