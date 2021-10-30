@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Service from "../Service/Service";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import ServicesSkeleton from "../../lib/skeleton/ServicesSkeleton";
 
 const Services = () => {
 	const [services, setServices] = useState([]);
@@ -24,6 +23,7 @@ const Services = () => {
 		};
 		fetchServices();
 	}, []);
+
 	return (
 		<div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 my-16">
 			<div className="text-center my-16">
@@ -37,18 +37,15 @@ const Services = () => {
 				</p>
 			</div>
 
-			{/* service */}
-
+			{/* loading skeleton */}
 			{loading && (
-				<div className="text-center">
-					<FontAwesomeIcon
-						icon={faSpinner}
-						spin
-						size="3x"
-						className="text-primary"
-					/>
+				<div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-8">
+					{services.map((service) => (
+						<ServicesSkeleton key={service._id}></ServicesSkeleton>
+					))}
 				</div>
 			)}
+			{/* service */}
 			{!loading && (
 				<div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-8">
 					{services.map((service) => (

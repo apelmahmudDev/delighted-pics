@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// react loading skeleton
+// import Skeleton from "react-loading-skeleton";
+// import "react-loading-skeleton/dist/skeleton.css";
+
 const Service = (props) => {
 	const { name, fee, description, img, _id } = props.service;
 	const subDescription = description.substr(0, 160);
