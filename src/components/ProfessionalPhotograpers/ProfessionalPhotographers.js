@@ -32,10 +32,10 @@ const ProfessionalPhotographers = () => {
 							<div
 								className={`sm:w-1/2 border border-gray-200 sm:rounded-${position.border}-3xl shadow p-3 bg-white`}
 							>
-								<h3 className="text-xl text-primary font-medium my-3">
+								<h3 className="text-xl text-primary font-medium my-2">
 									{position.title}
 								</h3>
-								<p className="text-primary text-md">{position.details}</p>
+								<p className="text-primary text-md my-2">{position.details}</p>
 							</div>
 						</div>
 					))}

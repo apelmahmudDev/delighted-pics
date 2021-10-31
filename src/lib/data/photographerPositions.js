@@ -11,36 +11,36 @@ const photographerPositions = [
 		order: 0,
 		border: "tl",
 		image: positionOneImage,
-		title: "Position 1",
+		title: "Wide angle",
 		details:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam id totamaspernatur officia dolore ipsam quod!?",
+			"Get wide angle photo from awesome shoot. It will be gift you nice quality image",
 	},
 	{
 		id: 2,
 		order: 1,
 		border: "tr",
 		image: positionTwoImage,
-		title: "Position 1",
+		title: "Straight forward",
 		details:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam id totamaspernatur officia dolore ipsam quod!?",
+			"Get straight forward  photo from excellent shoot from us. It will be gift you best quality photos.",
 	},
 	{
 		id: 3,
 		order: 0,
 		border: "tl",
 		image: positionThreeImage,
-		title: "Position 1",
+		title: "Down position",
 		details:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam id totamaspernatur officia dolore ipsam quod!?",
+			"Right now take your photo from excellent shoot from us. It will be gift you best quality photos.",
 	},
 	{
 		id: 4,
 		order: 1,
 		border: "tr",
 		image: positionFourImage,
-		title: "Position 1",
+		title: "Favourite fashion",
 		details:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam id totamaspernatur officia dolore ipsam quod!?",
+			"Stand with your favourite  fashion We will take your photo with our high resolution DSLR.",
 	},
 ];
 
