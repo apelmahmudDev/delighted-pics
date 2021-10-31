@@ -9,6 +9,7 @@ const photographerPositions = [
 	{
 		id: 1,
 		order: 0,
+		border: "tl",
 		image: positionOneImage,
 		title: "Position 1",
 		details:
@@ -17,6 +18,7 @@ const photographerPositions = [
 	{
 		id: 2,
 		order: 1,
+		border: "tr",
 		image: positionTwoImage,
 		title: "Position 1",
 		details:
@@ -25,6 +27,7 @@ const photographerPositions = [
 	{
 		id: 3,
 		order: 0,
+		border: "tl",
 		image: positionThreeImage,
 		title: "Position 1",
 		details:
@@ -33,6 +36,7 @@ const photographerPositions = [
 	{
 		id: 4,
 		order: 1,
+		border: "tr",
 		image: positionFourImage,
 		title: "Position 1",
 		details:
