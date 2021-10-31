@@ -38,13 +38,8 @@ const Services = () => {
 			</div>
 
 			{/* loading skeleton */}
-			{loading && (
-				<div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-8">
-					{services.map((service) => (
-						<ServicesSkeleton key={service._id}></ServicesSkeleton>
-					))}
-				</div>
-			)}
+			{loading && <ServicesSkeleton />}
+
 			{/* service */}
 			{!loading && (
 				<div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 md:gap-8">
