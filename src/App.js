@@ -13,6 +13,7 @@ import OrderInfo from "./components/OrderInfo/OrderInfo";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Footer from "./components/Footer/Footer";
 import Types from "./components/Types/Types";
+import ProfessionalPhotographers from "./components/ProfessionalPhotograpers/ProfessionalPhotographers";
 
 const App = () => {
 	return (
@@ -22,12 +23,15 @@ const App = () => {
 					<Route exact path="/">
 						<Banner />
 						<Services />
+						<ProfessionalPhotographers />
 						<Types />
 						<Footer />
 					</Route>
 					<Route path="/home">
 						<Banner />
 						<Services />
+						<ProfessionalPhotographers />
+						<Types />
 						<Footer />
 					</Route>
 					<Route path="/details/:serviceId">

@@ -1,9 +1,9 @@
-import Portrait from "../images/types/front-camera.png";
-import Photojournalism from "../images/types/photo.png";
-import dress from "../images/types/dress.png";
-import sports from "../images/types/sports.png";
-import workLife from "../images/types/work-life.png";
-import architecture from "../images/types/architecture.png";
+import Portrait from "../../images/types/front-camera.png";
+import Photojournalism from "../../images/types/photo.png";
+import dress from "../../images/types/dress.png";
+import sports from "../../images/types/sports.png";
+import workLife from "../../images/types/work-life.png";
+import architecture from "../../images/types/architecture.png";
 
 const photographyTypes = [
 	{

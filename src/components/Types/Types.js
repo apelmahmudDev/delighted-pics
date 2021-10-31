@@ -1,5 +1,5 @@
 import React from "react";
-import photographyTypes from "../../lib/photographyTypes";
+import photographyTypes from "../../lib/data/photographyTypes";
 
 const Types = () => {
 	return (
