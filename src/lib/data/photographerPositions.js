@@ -2,8 +2,6 @@ import positionOneImage from "../../images/position/position1.svg";
 import positionTwoImage from "../../images/position/position2.svg";
 import positionThreeImage from "../../images/position/position3.svg";
 import positionFourImage from "../../images/position/position4.svg";
-import positionFiveImage from "../../images/position/position5.svg";
-import positionSixImage from "../../images/position/position6.svg";
 
 const photographerPositions = [
 	{
