@@ -15,30 +15,34 @@ const ProfessionalPhotographers = () => {
 						awesome photo
 					</p>
 				</div>
+
 				{/* photographers position*/}
 				<div className="py-8">
-					{photographerPositions.map((position) => (
-						<div
-							key={position.id}
-							className="sm:flex items-center justify-center"
-						>
-							<div className={`order-${position.order} text-center `}>
-								<img
-									className="h-72 inline"
-									src={position.image}
-									alt={position.title}
-								/>
-							</div>
+					{photographerPositions &&
+						photographerPositions.map((position) => (
 							<div
-								className={`sm:w-1/2 border border-gray-200 sm:rounded-${position.border}-3xl shadow p-3 bg-white`}
+								key={position.id}
+								className="sm:flex items-center justify-center"
 							>
-								<h3 className="text-xl text-primary font-medium my-2">
-									{position.title}
-								</h3>
-								<p className="text-primary text-md my-2">{position.details}</p>
+								<div className={`text-center order-${position?.order}`}>
+									<img
+										className="h-72 inline"
+										src={position.image}
+										alt={position.title}
+									/>
+								</div>
+								<div
+									className={`sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-${position?.border}-3xl`}
+								>
+									<h3 className="text-xl text-primary font-medium my-2">
+										{position.title}
+									</h3>
+									<p className="text-primary text-md my-2">
+										{position.details}
+									</p>
+								</div>
 							</div>
-						</div>
-					))}
+						))}
 				</div>
 			</div>
 		</div>
