@@ -34,6 +34,11 @@ const App = () => {
 						<Types />
 						<Footer />
 					</Route>
+					<Route path="/example">
+						<Banner />
+						<ProfessionalPhotographers />
+						<Footer />
+					</Route>
 					<Route path="/details/:serviceId">
 						<Navbar />
 						<ServiceDetails />
