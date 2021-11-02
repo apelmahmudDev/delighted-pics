@@ -10,7 +10,6 @@ import photoExample6 from "../../images/example/example6.jpg";
 import photoExample7 from "../../images/example/example7.jpg";
 import photoExample8 from "../../images/example/example8.jpg";
 import photoExample10 from "../../images/example/example10.jpg";
-import photoExample11 from "../../images/example/example11.jpg";
 import photoExample12 from "../../images/example/example12.jpg";
 import photoExample13 from "../../images/example/example13.jpg";
 import photoExample14 from "../../images/example/example14.jpg";
