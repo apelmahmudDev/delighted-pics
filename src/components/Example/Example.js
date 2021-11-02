@@ -9,6 +9,7 @@ import photoExample5 from "../../images/example/example5.jpg";
 import photoExample6 from "../../images/example/example6.jpg";
 import photoExample7 from "../../images/example/example7.jpg";
 import photoExample8 from "../../images/example/example8.jpg";
+import ExampleNavigation from "./ExampleNavigation/ExampleNavigation";
 
 const Example = () => {
 	const { setIsNavigate } = useAuth();
@@ -30,6 +31,8 @@ const Example = () => {
 
 	return (
 		<div className="max-w-7xl mx-auto px-2 mb-16">
+			<ExampleNavigation />
+
 			<div className="container grid grid-flow-row-dense gap-4">
 				{photoExamples.map((image) => (
 					<div key={image.id} className={`${image.spreadArea}`}>
