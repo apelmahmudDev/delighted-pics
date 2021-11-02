@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Footer from "./components/Footer/Footer";
 import Types from "./components/Types/Types";
 import ProfessionalPhotographers from "./components/ProfessionalPhotograpers/ProfessionalPhotographers";
+import Example from "./components/Example/Example";
 
 const App = () => {
 	return (
@@ -35,8 +36,8 @@ const App = () => {
 						<Footer />
 					</Route>
 					<Route path="/example">
-						<Banner />
-						<ProfessionalPhotographers />
+						<Navbar />
+						<Example />
 						<Footer />
 					</Route>
 					<Route path="/details/:serviceId">
