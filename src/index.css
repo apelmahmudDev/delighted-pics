@@ -6,6 +6,22 @@
 
 body {
 	font-family: "Montserrat", sans-serif;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(transparent, #00263d);
+	border-radius: 15px;
+	transition: 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(transparent, #5c5f60);
 }
 
 .text-primary {

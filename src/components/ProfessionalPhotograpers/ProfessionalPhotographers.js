@@ -61,7 +61,7 @@ const ProfessionalPhotographers = () => {
 
 				{/* photographers position*/}
 				<div className="py-8">
-					{photographerPositions.map((position) => (
+					{/* {photographerPositions.map((position) => (
 						<div
 							key={position.id}
 							className="sm:flex items-center justify-center"
@@ -82,7 +82,91 @@ const ProfessionalPhotographers = () => {
 								<p className="text-primary text-md my-2">{position.details}</p>
 							</div>
 						</div>
-					))}
+					))} */}
+					<div className="sm:flex items-center justify-center">
+						<div data-aos="fade-right" className="text-center order-0">
+							<img
+								className="h-72 inline"
+								src={positionOneImage}
+								alt="Wide angle"
+							/>
+						</div>
+						<div
+							data-aos="fade-left"
+							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tl-3xl"
+						>
+							<h3 className="text-xl text-primary font-medium my-2">
+								Wide angle
+							</h3>
+							<p className="text-primary text-md my-2">
+								Get wide angle photo from awesome shoot. It will be gift you
+								nice quality image
+							</p>
+						</div>
+					</div>
+					<div className="sm:flex items-center justify-center">
+						<div data-aos="fade-left" className="text-center order-1">
+							<img
+								className="h-72 inline"
+								src={positionTwoImage}
+								alt="Straight forward"
+							/>
+						</div>
+						<div
+							data-aos="fade-right"
+							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tr-3xl"
+						>
+							<h3 className="text-xl text-primary font-medium my-2">
+								Straight forward
+							</h3>
+							<p className="text-primary text-md my-2">
+								Get straight forward photo from excellent shoot from us. It will
+								be gift you best quality photos.
+							</p>
+						</div>
+					</div>
+					<div className="sm:flex items-center justify-center">
+						<div data-aos="fade-right" className="text-center order-0">
+							<img
+								className="h-72 inline"
+								src={positionThreeImage}
+								alt="Down position"
+							/>
+						</div>
+						<div
+							data-aos="fade-left"
+							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tl-3xl"
+						>
+							<h3 className="text-xl text-primary font-medium my-2">
+								Down position
+							</h3>
+							<p className="text-primary text-md my-2">
+								Right now take your photo from excellent shoot from us. It will
+								be gift you best quality photos.
+							</p>
+						</div>
+					</div>
+					<div className="sm:flex items-center justify-center">
+						<div data-aos="fade-left" className="text-center order-1">
+							<img
+								className="h-72 inline"
+								src={positionFourImage}
+								alt="Down position"
+							/>
+						</div>
+						<div
+							data-aos="fade-right"
+							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tr-3xl"
+						>
+							<h3 className="text-xl text-primary font-medium my-2">
+								Favorite fashion
+							</h3>
+							<p className="text-primary text-md my-2">
+								Stand with your favorite fashion We will take your photo with
+								our high resolution DSLR.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

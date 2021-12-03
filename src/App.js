@@ -15,6 +15,13 @@ import Footer from "./components/Footer/Footer";
 import Types from "./components/Types/Types";
 import ProfessionalPhotographers from "./components/ProfessionalPhotograpers/ProfessionalPhotographers";
 import Example from "./components/Example/Example";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({
+	offset: 120,
+	duration: 1000,
+	once: false,
+});
 
 const App = () => {
 	return (
