@@ -84,17 +84,14 @@ const ProfessionalPhotographers = () => {
 						</div>
 					))} */}
 					<div className="sm:flex items-center justify-center">
-						<div data-aos="fade-right" className="text-center order-0">
+						<div className="text-center order-0 wow slideInLeft">
 							<img
 								className="h-72 inline"
 								src={positionOneImage}
 								alt="Wide angle"
 							/>
 						</div>
-						<div
-							data-aos="fade-left"
-							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tl-3xl"
-						>
+						<div className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tl-3xl wow slideInRight">
 							<h3 className="text-xl text-primary font-medium my-2">
 								Wide angle
 							</h3>
@@ -105,17 +102,14 @@ const ProfessionalPhotographers = () => {
 						</div>
 					</div>
 					<div className="sm:flex items-center justify-center">
-						<div data-aos="fade-left" className="text-center order-1">
+						<div className="text-center order-1 wow slideInRight">
 							<img
 								className="h-72 inline"
 								src={positionTwoImage}
 								alt="Straight forward"
 							/>
 						</div>
-						<div
-							data-aos="fade-right"
-							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tr-3xl"
-						>
+						<div className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tr-3xl wow slideInLeft">
 							<h3 className="text-xl text-primary font-medium my-2">
 								Straight forward
 							</h3>
@@ -126,17 +120,14 @@ const ProfessionalPhotographers = () => {
 						</div>
 					</div>
 					<div className="sm:flex items-center justify-center">
-						<div data-aos="fade-right" className="text-center order-0">
+						<div className="text-center order-0 wow slideInLeft">
 							<img
 								className="h-72 inline"
 								src={positionThreeImage}
 								alt="Down position"
 							/>
 						</div>
-						<div
-							data-aos="fade-left"
-							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tl-3xl"
-						>
+						<div className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tl-3xl wow slideInRight">
 							<h3 className="text-xl text-primary font-medium my-2">
 								Down position
 							</h3>
@@ -147,17 +138,14 @@ const ProfessionalPhotographers = () => {
 						</div>
 					</div>
 					<div className="sm:flex items-center justify-center">
-						<div data-aos="fade-left" className="text-center order-1">
+						<div className="text-center order-1 wow slideInRight">
 							<img
 								className="h-72 inline"
 								src={positionFourImage}
 								alt="Down position"
 							/>
 						</div>
-						<div
-							data-aos="fade-right"
-							className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tr-3xl"
-						>
+						<div className="sm:w-1/2 shadow p-3 bg-white border border-gray-200 sm:rounded-tr-3xl wow slideInLeft">
 							<h3 className="text-xl text-primary font-medium my-2">
 								Favorite fashion
 							</h3>

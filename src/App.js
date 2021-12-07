@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Banner from "./components/Banner/Banner";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Services from "./components/Services/Services";
@@ -15,15 +15,15 @@ import Footer from "./components/Footer/Footer";
 import Types from "./components/Types/Types";
 import ProfessionalPhotographers from "./components/ProfessionalPhotograpers/ProfessionalPhotographers";
 import Example from "./components/Example/Example";
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init({
-	offset: 120,
-	duration: 1000,
-	once: false,
-});
+import WOW from "wowjs";
 
 const App = () => {
+	useEffect(() => {
+		new WOW.WOW({
+			live: false,
+		}).init();
+	}, []);
+
 	return (
 		<div>
 			<Router>

@@ -23,7 +23,8 @@ const Types = () => {
 					>
 						<div className="text-center">
 							<img
-								className="h-20 inline"
+								className="h-20 inline wow bounceIn"
+								data-wow-duration="1s"
 								src={type.image}
 								alt="front-camera"
 							/>
