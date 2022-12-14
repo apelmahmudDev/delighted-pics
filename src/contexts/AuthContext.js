@@ -19,6 +19,8 @@ const AuthProvider = ({ children }) => {
 		return auth.signInWithPopup(provider);
 	};
 
+	// sign up with sent email verification link
+
 	const signup = async (email, password) => {
 		const result = await auth.createUserWithEmailAndPassword(email, password);
 		return await result.user.sendEmailVerification();
