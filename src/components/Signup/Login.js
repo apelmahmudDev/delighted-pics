@@ -4,12 +4,14 @@ import { useAuth } from '../../contexts/AuthContext';
 import googleIcon from '../../images/logo/google.svg';
 
 const Login = () => {
+	const { login, signWithGoogle, setIsNavigate, isVerified } = useAuth();
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
+	const [message, setMessage] = useState('');
 
-	const { login, signWithGoogle, setIsNavigate } = useAuth();
 	const emailRef = useRef();
 	const passwordRef = useRef();
+	const [isRun, setIsRun] = useState(false);
 
 	// react router dom path detect and go there
 	let history = useHistory();
@@ -26,14 +28,29 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			setError('');
+			setMessage('');
 			setLoading(true);
+			setIsRun(true);
 			await login(emailRef.current.value, passwordRef.current.value);
-			history.replace(from);
 		} catch (err) {
 			setError(err.message);
 		}
 		setLoading(false);
 	};
+
+	useEffect(() => {
+		if (isVerified) {
+			history.replace(from);
+		}
+	}, [isVerified, history, from]);
+
+	useEffect(() => {
+		if (isRun) {
+			if (!error && !loading && !isVerified) {
+				setMessage('Please verify your email first');
+			}
+		}
+	}, [error, isRun, isVerified, loading]);
 
 	// sign with google
 	const handleGoogleSignup = async () => {
@@ -57,6 +74,11 @@ const Login = () => {
 				<div className='text-red-500 font-semibold text-md text-center pb-2'>
 					{error}
 				</div>
+				{!error && !isVerified && (
+					<div className='text-green-500 font-semibold text-md text-center pb-2'>
+						{message}
+					</div>
+				)}
 				<form onSubmit={handleSubmit}>
 					<input
 						type='email'
@@ -75,7 +97,7 @@ const Login = () => {
 					<input
 						type='submit'
 						disabled={loading}
-						value='Login'
+						value={loading ? 'Loading...' : 'Login'}
 						className='sign-btn'
 					/>
 				</form>
